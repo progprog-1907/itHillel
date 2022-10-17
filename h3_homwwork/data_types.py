@@ -4,10 +4,8 @@ def catalog_finder(url_list):
     список только тех URL, в которых есть /catalog/
     """
     # your code here
-    result_list = None
+    result_list = [i for i in url_list if i.find("/catalog/") != -1]
     return result_list
-
-
 
 
 def get_str_center(input_str):
@@ -16,10 +14,8 @@ def get_str_center(input_str):
     (2 для четного кол-ва символов, 3 - для нечетного).
     """
     # your code here
-    output_str = None
+    output_str = input_str
     return output_str
-
-
 
 
 def count_symbols(input_str):
@@ -29,10 +25,10 @@ def count_symbols(input_str):
     {буква:количество упоминаний в строке}
     """
     # your code here
-    output_dict = None
+    output_list = list(set(input_str))
+    output_list.sort()
+    output_dict = {f"{i}": input_str.count(i) for i in output_list}
     return output_dict
-
-
 
 
 def mix_strings(str1, str2):
@@ -41,10 +37,8 @@ def mix_strings(str1, str2):
     в середину первой
     """
     # your code here
-    result_str = None
+    result_str = str1[:int(len(str1) / 2) + str2 + str1[int(len(str1) / 2)]:]
     return result_str
-
-
 
 
 def even_int_generator():
@@ -53,5 +47,5 @@ def even_int_generator():
     в результирующий список только четные числа.
     """
     # your code here
-    even_int_list = None
+    even_int_list = [i for i in range(100) if i % 2 == 0]
     return even_int_list
