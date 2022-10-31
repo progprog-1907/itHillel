@@ -2,7 +2,6 @@ from datetime import date
 from tabulate import tabulate
 # d = date(1969, 6, 26) - конструктор даты
 # d.year < 2020 - проверка даты
-
 # database – список словарей, эмулирующий базу данных со строками и полями
 database = list()
 
