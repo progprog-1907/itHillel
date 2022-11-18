@@ -12,7 +12,7 @@ def validate_password(password):
     if not _validate_symbols(password):
         return ["Пароль содержит запрещенные символы"]
     if not _validate_letters_even(password):
-        return ["Пароль содержит не четное количество букв"]
+        return ['Пароль содержит не четное количество букв']
     if not _validate_numbers_odd(password):
         return ["Пароль содержит четное количество цифр"]
     return True
