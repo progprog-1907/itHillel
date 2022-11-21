@@ -7,16 +7,16 @@
 # аргумент - максимальный размер хранилища. Если хранилище заполнено, нужно удалить 1 любой элемент,
 # чтобы освободить место под новый.
 def do_cache(maxsize):
-    storage = []
-
     def _repeat(func):
+        storage = []
+
         def wrapper(*args, **kwargs):
             interceptor = tuple([*args, func(*args, **kwargs)])
             if len(storage) == maxsize:
                 storage.pop()
             if not storage.count(interceptor):
                 storage.append(interceptor)
-            print(storage)
+            return storage
         return wrapper
     return _repeat
 
@@ -24,10 +24,3 @@ def do_cache(maxsize):
 @do_cache(maxsize=3)
 def get_value(a, b):
     return a ** b
-
-
-get_value(2, 3)
-get_value(3, 3)
-get_value(4, 3)
-get_value(1, 3)
-get_value(4, 2)
