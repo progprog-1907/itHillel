@@ -38,11 +38,3 @@ class IpHandler:
         """Returns a list of last octets of each IP (127.0.0.1 -> .1)"""
         last_octets = self._ipList[self._ipList.rfind(".")::]
         return last_octets
-
-
-i = IpHandler("127.0.0.1")
-print(i.ipList)
-i.ipList = "127.0.1.31"
-print(i.reverse_IP())
-print(i.get_oct_1_3())
-print(i.get_oct_3())
